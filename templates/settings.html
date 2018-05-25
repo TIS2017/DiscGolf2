@@ -1,0 +1,355 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="jumbotron">
+	<!--Row 1 - Update Data -->
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Update data</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['update_data_day']}}, {{settings['update_data_time']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<select class="form-control" name="update_data_day">
+							<option value="1">Monday</option>
+							<option value="2">Tuesday</option>
+							<option value="3">Wednesday</option>
+							<option value="4">Thursday</option>
+							<option value="5">Friday</option>
+							<option value="6">Saturday</option>
+							<option value="7">Sunday</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <div class="input-group clockpicker">
+                            <input type="text" name="update_data_time" class="form-control" value="{{settings['update_data_time']}}"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="update_data">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 2 - Hot Rounds - MPO -->
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Hot Rounds - MPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['hot_rounds_MPO']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="hot_rounds_mpo" placeholder="{{settings['hot_rounds_MPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="hot_rounds_mpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 3- Hot Rounds - FPO -->
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Hot Rounds - FPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['hot_rounds_FPO']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="hot_rounds_fpo" placeholder="{{settings['hot_rounds_FPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="hot_rounds_fpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 4 - Eligibility percentage - MPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Eligibility percentage - MPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['eligibility_MPO']}}%)</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="eligibility_mpo" placeholder="{{settings['eligibility_MPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="eligibility_mpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 5 - Eligibility percentage - FPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Eligibility percentage - FPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['eligibility_FPO']}}%)</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="eligibility_fpo" placeholder="{{settings['eligibility_FPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="eligibility_fpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 6 - Current year -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Current year</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['current_year']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="current_year" placeholder="{{settings['current_year']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="current_year">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<!--Row 7 - Tournaments MPO/FPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Tournaments MPO/FPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['tournaments_MPO_FPO']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="tournaments_MPO_FPO" placeholder="{{settings['tournaments_MPO_FPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="tournaments_MPO_FPO">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 8 - Points scale - MPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Points scale - MPO</h3>
+				</div>
+				<!--<div class="row">-->
+					<!--<p>({{settings['points_scale_MPO_scale']}})</p>-->
+				<!--</div>-->
+                <!--<div class="row">-->
+					<!--<p>({{settings['points_scale_MPO_points']}})</p>-->
+				<!--</div>-->
+				<div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_MPO_scale" placeholder="{{settings['points_scale_MPO_scale']}}" class="form-control"/>
+					</div>
+				</div>
+                <div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_MPO_points" placeholder="{{settings['points_scale_MPO_points']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="scale_mpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 9 - Points scale - FPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Points scale - FPO</h3>
+				</div>
+				<!--<div class="row">-->
+					<!--<p>({{settings['points_scale_FPO_scale']}})</p>-->
+				<!--</div>-->
+                <!--<div class="row">-->
+					<!--<p>({{settings['points_scale_FPO_points']}})</p>-->
+				<!--</div>-->
+				<div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_FPO_scale" placeholder="{{settings['points_scale_FPO_scale']}}" class="form-control"/>
+					</div>
+				</div>
+                <div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_FPO_points" placeholder="{{settings['points_scale_FPO_points']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="scale_fpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<!--Row 10 - Tournaments ProTour MPO/FPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Tournaments ProTour MPO/FPO</h3>
+				</div>
+				<div class="row">
+					<p>({{settings['tournaments_protour_MPO_FPO']}})</p>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+                        <input type="text" name="tournaments_protour_MPO_FPO" placeholder="{{settings['tournaments_protour_MPO_FPO']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="tournaments_protour_MPO_FPO">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 11 - Points scale - ProTour - MPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Points scale - ProTour - MPO</h3>
+				</div>
+				<!--<div class="row">-->
+					<!--<p>({{settings['points_scale_protour_MPO_scale']}})</p>-->
+				<!--</div>-->
+                <!--<div class="row">-->
+					<!--<p>({{settings['points_scale_protour_MPO_points']}})</p>-->
+				<!--</div>-->
+				<div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_protour_MPO_scale" placeholder="{{settings['points_scale_protour_MPO_scale']}}" class="form-control"/>
+					</div>
+				</div>
+                <div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_protour_MPO_points" placeholder="{{settings['points_scale_protour_MPO_points']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="scale_protour_mpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+    <!--Row 12 - Points scale - ProTour - FPO -->
+    <div class="row">
+		<div class="col-md-1"></div>
+		<div class="jumbotron settings-pill">
+			<form action="" method="post">
+				<div class="row">
+					<h3>Points scale - ProTour - FPO</h3>
+				</div>
+				<!--<div class="row">-->
+					<!--<p>({{settings['points_scale_protour_FPO_scale']}})</p>-->
+				<!--</div>-->
+                <!--<div class="row">-->
+					<!--<p>({{settings['points_scale_protour_FPO_points']}})</p>-->
+				<!--</div>-->
+				<div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_protour_FPO_scale" placeholder="{{settings['points_scale_protour_FPO_scale']}}" class="form-control"/>
+					</div>
+				</div>
+                <div class="row">
+					<div class="form-group col-md-10 pull-left">
+                        <input type="text" name="points_scale_protour_FPO_points" placeholder="{{settings['points_scale_protour_FPO_points']}}" class="form-control"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-4 pull-left">
+						<button type="submit" name="submit" class="btn btn-default" value="scale_protour_fpo">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+</div>
+{% endblock %}

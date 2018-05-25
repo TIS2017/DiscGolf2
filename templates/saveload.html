@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+<!--Row 1-->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="jumbotron settings-pill">
+        <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <h3>Load Data</h3>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 pull-left">
+                   <label class="btn btn-default"><input type=file name=file></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 pull-left">
+                    <button type="submit" name="submit" class="btn btn-default" value="upload_data">Import</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<!--Row 2-->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="jumbotron settings-pill">
+        <form action="http://localhost:5000/downloader" method="post">
+            <div class="row">
+                <h3>Export Data</h3>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 pull-left">
+                    <button type="submit" name="submit" class="btn btn-default" value="export_data">Export</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<!--Row 3-->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="jumbotron settings-pill">
+        <form action="http://localhost:5000/wipedatabase" method="post">
+            <div class="row">
+                <h3>Wipe Database</h3>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 pull-left">
+                    <button type="submit" name="submit" class="btn btn-default" value="wipe_database">Wipe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<nav class="navbar">
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/"> <- back to results</a></li>
+    </ul>
+</nav>
+<p class="text-uppercase font-weight-light">{{tournamentName}}</p>
+<div class="scroll-me">
+  <table class="table table-hover table-bordered">
+    {% for header in tableHeader %}
+      <th>
+        {{header}}
+      </th>
+    {% endfor %}
+    {% for body in tableBody %}
+      <tr>
+        {% for data in body %}
+            <td>{{data}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

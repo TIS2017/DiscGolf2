@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<p class="text-uppercase font-weight-light">Select a division:</p>
+<nav class="navbar">
+    <div class="division-section">
+        <div class="pull-left">
+            <button class="btn btn-default nav_item"><a href="/mpo">MPO</a></button>
+            <button class="btn btn-default nav_item"><a href="/fpo">FPO</a></button>
+            <!--<li role="presentation" class="nav_item btn btn-default"><a href="/mpo">MPO</a></li>-->
+            <!--<li role="presentation" class="nav_item btn btn-default"><a href="/fpo">FPO</a></li>-->
+        </div>
+        <div class="pull-right">
+            <form class="form-inline" action="" method="post">
+                <select class="form-control" name="rows_to_display">
+                    <option value="200">200</option>
+                    <option value="400">400</option>
+                    <option value="800">800</option>
+                    <option value="1000">1000</option>
+                    <option value="-1">All</option>
+                </select>
+                <button class="btn btn-primary" name="submit" type="submit">Select</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="scroll-me center-box">
+  <table class="table table-hover table-bordered scroll-me">
+    <tr>
+    {% for header in tableHeader %}
+        {% if header|length > 1 %}
+            <th><a href="/tournament/{{header[1]}}">{{ header[0] }}</a></th>
+        {% else %}
+            <th>{{ header[0] }}</th>
+        {% endif %}
+    {% endfor %}
+
+    </tr>
+      {% for body in tableBody %}
+      <tr>
+        {% for data in body %}
+            {% if loop.index == 2 %}
+                <td><a href="https://www.pdga.com/player/{{body[2]}}" target="_blank">{{ data }}</a></td>
+            {% else %}
+                <td>{{ data }}</td>
+            {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+
+    <!--{% for body in tableBody %}-->
+      <!--<tr>-->
+        <!--{% for data in body %}-->
+            <!--<td>{{ data }}</td>-->
+        <!--{% endfor %}-->
+      <!--</tr>-->
+    <!--{% endfor %}-->
+  </table>
+</div>
+{% endblock %}

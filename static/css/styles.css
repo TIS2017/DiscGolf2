@@ -1,0 +1,15 @@
+p {
+    font-family: 'Arial';
+}
+
+.scroll-me {
+    overflow-x: auto;
+}
+
+.division-section {
+    margin: 0px 10px 0px 10px;
+}
+
+.settings-pill {
+    background-color:#e0e0e0;
+}
